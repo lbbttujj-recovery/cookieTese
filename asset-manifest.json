@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cookieTese/static/css/main.e6c13ad2.css",
+    "main.js": "/cookieTese/static/js/main.94d58883.js",
+    "static/js/453.3cc61303.chunk.js": "/cookieTese/static/js/453.3cc61303.chunk.js",
+    "index.html": "/cookieTese/index.html",
+    "main.e6c13ad2.css.map": "/cookieTese/static/css/main.e6c13ad2.css.map",
+    "main.94d58883.js.map": "/cookieTese/static/js/main.94d58883.js.map",
+    "453.3cc61303.chunk.js.map": "/cookieTese/static/js/453.3cc61303.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.94d58883.js"
+  ]
+}
