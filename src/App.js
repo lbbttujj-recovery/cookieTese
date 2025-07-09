@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Cookie from './Cookie.jsx'
+import {useYandexMetrika} from './useCookie.js'
 
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [editId, setEditId] = useState(null);
   const [editValue, setEditValue] = useState('');
+
+  const [ymConsent, setYmConsent] = useState(false);
+  const YM_COUNTER_ID = 12345678; // Замените на ваш ID счетчика
+
+  // Проверяем сохраненное согласие при загрузке
+  useEffect(() => {
+    const consent = localStorage.getItem('ym_cookie_consent') === 'true';
+    setYmConsent(consent);
+  }, []);
+
+  // Инициализируем Яндекс.Метрику при наличии согласия
+  useYandexMetrika(YM_COUNTER_ID, ymConsent);
 
   const addTodo = () => {
     if (inputValue.trim()) {
@@ -103,6 +117,7 @@ const App = () => {
           </li>
         ))}
       </ul>
+      <Cookie onAccept={() => setYmConsent(true)}/>
     </div>
   );
 };
